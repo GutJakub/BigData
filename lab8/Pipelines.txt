@@ -1,0 +1,14 @@
+Wymuszanie i kontrola schematu wejściowego (schema enforcement)
+	Zamiast pozwalać Sparkowi zgadywać schemat (inferSchema), zawsze jawnie podajesz schemat danych i reagujesz na niespodziewane kolumny. Chroni przed błędami typu: zmieniony typ danych, brakujące kolumny, inne struktury w JSON.
+
+Walidacja wartości i typów danych (data validation / assertions)
+	Sprawdzasz, czy kolumny mają poprawne typy, wartości nie są puste, zawierają dozwolone wartości. Zapobiega błędom logicznym (np. action=null, time<0, itp.) i poprawia jakość danych.
+
+Automatyczna obsługa brakujących plików i pustych zbiorów
+	Zabezpieczasz kod przed sytuacją, gdy pliki nie istnieją lub DataFrame jest pusty.Niektóre źródła mogą chwilowo nie mieć danych — lepiej zakończyć etap spokojnie niż z wyjątkiem.
+
+Checkpointing i logowanie błędów
+	Dodajesz obsługę checkpoints, logów oraz mechanizmu odzyskiwania po błędzie, np. zapisując nieparsowalne dane. Umożliwia kontynuację streamu i diagnozę problemów z danymi.
+
+Automatyczne czyszczenie i sanity check danych (data cleaning)
+	Oczyszczasz dane z pustych znaków, null, nadmiarowych spacji i dziwnych znaków. Użytkownicy często zostawiają "brudne" dane – niech kod automatycznie to poprawia.
